@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const authRouter = require("./authRouter")
 const bodyParser = require("body-parser")
 const usersRouter = require("./usersRouter")
+const docsRouter = require("./docsRouter")
 
 const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser")
@@ -15,6 +16,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/auth", authRouter)
 app.use("/users", usersRouter)
+app.use("/docs", docsRouter)
 app.use(cookieParser())
 
 
